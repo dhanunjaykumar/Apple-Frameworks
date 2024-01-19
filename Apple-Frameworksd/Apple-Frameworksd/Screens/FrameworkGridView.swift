@@ -12,7 +12,7 @@ struct FrameworkGridView: View {
     @StateObject var viewModel = FrameworkGridViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 LazyVGrid(columns: viewModel.columns) {
                     ForEach(MockData.frameworks) { framework in

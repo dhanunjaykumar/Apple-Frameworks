@@ -40,41 +40,9 @@ struct FrameworkDetailView: View {
         })
     }
 }
-struct AFButton: View {
-    
-    var title: String
-    
-    var body: some View {
-        Text(title)
-            .font(.title2)
-            .fontWeight(.semibold)
-            .frame(width: 280, height: 50)
-            .background(Color.red)
-            .foregroundStyle(.white)
-            .clipShape(.rect(cornerRadius: 10))
-    }
-}
 
 
-struct XDismissButton: View {
-    
-    @Binding var isShowingDetailView: Bool
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            
-            Button {
-                isShowingDetailView = false
-            } label: {
-                Image(systemName: "xmark")
-                    .foregroundStyle(Color(.label))
-                    .imageScale(.large)
-                    .frame(width: 44, height: 44)
-            }
-        }.padding()
-    }
-}
+
 #Preview {
     FrameworkDetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false)).preferredColorScheme(.dark)
 }
